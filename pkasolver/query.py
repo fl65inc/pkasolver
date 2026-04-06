@@ -11,7 +11,10 @@ import svgutils.transform as sg
 import torch
 from rdkit import Chem, RDLogger
 from rdkit.Chem import Draw
-from torch_geometric.loader import DataLoader
+try:
+    from torch_geometric.loader import DataLoader
+except ImportError:
+    from torch_geometric.data import DataLoader
 
 from pkasolver.chem import create_conjugate
 from pkasolver.constants import DEVICE, EDGE_FEATURES, NODE_FEATURES

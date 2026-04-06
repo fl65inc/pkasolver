@@ -1,7 +1,10 @@
 from typing import Tuple
 
 import numpy as np
-from torch_geometric.loader import DataLoader
+try:
+    from torch_geometric.loader import DataLoader
+except ImportError:
+    from torch_geometric.data import DataLoader
 
 from pkasolver.constants import DEVICE
 

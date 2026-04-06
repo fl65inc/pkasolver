@@ -7,13 +7,8 @@ toolset for predicting the pka values of small molecules
 from .pkasolver import *
 from .dimorphite_dl.dimorphite_dl import run_with_mol_list
 
-# Handle versioneer
-from ._version import get_versions
-
-versions = get_versions()
-__version__ = versions["version"]
-__git_revision__ = versions["full-revisionid"]
-del get_versions, versions
+# Static version
+__version__ = "1.0.0"
 
 import logging
 
